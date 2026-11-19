@@ -1,0 +1,9 @@
+{
+  "name": "for-dummies",
+  "description": "Explain anything in plain English: analogy, example, diagram, recap.",
+  "version": "0.3.0",
+  "license": "MIT",
+  "author": {
+    "name": "Omer Amar"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "for-dummies",
+  "description": "The for-dummies explanation skill.",
+  "owner": {
+    "name": "Omer Amar"
+  },
+  "plugins": [
+    {
+      "name": "for-dummies",
+      "source": "./",
+      "description": "Explain anything in plain English: analogy, example, diagram, recap."
+    }
+  ]
+}
