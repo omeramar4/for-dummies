@@ -2,6 +2,8 @@
 
 A skill for Claude Code (and other agent-skill tools) that explains anything clearly: concepts, code, errors, systems.
 
+![A for-dummies answer to "what is a database index?"](assets/demo.png)
+
 Every answer has the same shape: **one-sentence answer, analogy, concrete example, diagram, common mix-up, recap.**
 
 ## Try it
@@ -20,40 +22,10 @@ Plain phrases also trigger it: "ELI5", "in simple terms", "I don't get it". If y
 
 ## What you get
 
-Prompt: `/for-dummies what is an API?`
+Real, unedited answers from the skill:
 
----
-
-**An API is a menu that lets one program ask another program to do something, without knowing how it works inside.**
-
-**Analogy: a restaurant.** You (the app) don't walk into the kitchen. You read the menu (the API's list of allowed requests), tell the waiter (the API) what you want, and the kitchen (the server) cooks it. You get a plate back (the response).
-
-```mermaid
-sequenceDiagram
-    participant App as You (the app)
-    participant API as Waiter (the API)
-    participant Server as Kitchen (the server)
-    App->>API: "One weather report for Paris, please"
-    API->>Server: Look up Paris weather
-    Server-->>API: 18°C, cloudy
-    API-->>App: {"city": "Paris", "temp": 18}
-```
-
-**Example.** A weather app asks `GET /weather?city=Paris`. The reply is a small bundle of data, `{"city": "Paris", "temp": 18}`. The app never sees the weather company's database.
-
-**Common mix-up.** Not "an API is a website". It's a doorway for programs; a website is a doorway for people.
-
-**Why it matters.** Apps can borrow features (maps, payments, weather) instead of rebuilding them.
-
-**In short**
-- An API = a menu of requests a program is allowed to make.
-- You ask, it answers; the inside stays hidden.
-
-**Check yourself:** In the restaurant story, what is the "menu"? *(The list of requests the API accepts.)*
-
-*Level: newcomer. Say "deeper" for more detail.*
-
----
+- [What is a database index?](examples/database-index.md): analogy, mapping table, ASCII tree (terminal output)
+- [How does "log in with Google" work?](examples/log-in-with-google.md): end-to-end walk-through with a sequence diagram
 
 ## Features
 - **Three levels:** `newcomer` (default, zero background), `familiar` (you know the basics or a neighbouring field), `fluent` (internals, edge cases, trade-offs). Picked from how you ask; never asks you.
