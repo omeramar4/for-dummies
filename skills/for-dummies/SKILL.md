@@ -4,9 +4,23 @@ description: Explain a concept, code, error, or system clearly, with a one-sente
 argument-hint: "<topic> [newcomer|familiar|fluent]"
 ---
 
+# For Dummies
+
+## Purpose
 Explain the topic so the reader understands it on the first read, at the level they need.
 
-Invoked as `/for-dummies <topic> [newcomer|familiar|fluent]`, or by the phrases above. A level word in the arguments sets the level. If no topic is named (bare `/for-dummies`, "I don't get it"), explain the last thing discussed.
+## Inputs
+- **Topic** (optional): what to explain, from the arguments or the user's message. If none is named (bare `/for-dummies`, "I don't get it"), explain the last thing discussed.
+- **Level** (optional): `newcomer`, `familiar` or `fluent`. A level word in the arguments sets it; otherwise it is inferred as described below.
+
+## Examples
+```
+/for-dummies what is a database index?
+/for-dummies Rust ownership familiar
+/for-dummies Raft leader election fluent
+/for-dummies
+```
+Plain phrases work too: "ELI5 this stack trace", "I know Python but not Rust, explain ownership".
 
 ## Pick the level
 The level describes how much the reader already knows **about this topic**. Default is **newcomer**.
@@ -19,7 +33,7 @@ The level describes how much the reader already knows **about this topic**. Defa
 
 Choose by, in order: an explicit request ("familiar level", "explain as fluent"), then clues in how the user phrased the question, then newcomer. Never ask which level. End with one short line naming the level used, so the user can ask to go up or down.
 
-## How to explain
+## Instructions
 Use these parts in this order. Skip any part that doesn't add understanding.
 
 1. **One-sentence answer first.** Say what it is or what it does before any detail.
@@ -51,3 +65,8 @@ Use these parts in this order. Skip any part that doesn't add understanding.
 - Visuals support the words, never replace the one-sentence answer. One clear visual beats several busy ones.
 - Short. Simple doesn't mean long.
 - Accurate: simplify, never say something false. If a simplification hides an important caveat, add it in one line.
+
+## Limitations
+- Mermaid diagrams only render in some interfaces; the ASCII fallback is less precise.
+- Every analogy breaks somewhere, and a simplified answer can hide caveats. The skill flags the important ones, not all of them.
+- For code in the current project, the explanation is only as good as the code that was read.
